@@ -1,0 +1,19 @@
+.bg-dark {
+    background-color: #ff770f!important;
+}
+.navbar{
+    margin-top: 15px;
+    border-radius: 5px;
+    margin-left: 20px;
+}
+.card{
+    margin-top: 10px;
+    margin-left: 20px;
+}
+.a{
+    border-bottom: 1px solid #aaa;
+
+}
+.b{
+    border-bottom: 1px solid #aaa;
+}

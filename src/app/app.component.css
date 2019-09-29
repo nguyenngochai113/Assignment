@@ -1,0 +1,36 @@
+.bg-dark {
+    background-color: #78ad11!important;
+}
+.navbar-nav{
+    
+    font-size: 18px;
+}
+.f{
+    margin-left: 40px
+}
+.d{
+    margin-left: 40px;
+}
+.c{
+    margin-left: 40px;
+}
+.b{
+    margin-left: 40px;
+}
+.carousel-inner{
+    display: block;
+    height: 500px;
+    max-width: 100%;
+
+}
+.under-line{
+    width: 120px;
+    border-radius:2px;
+    border-bottom: 4px solid #7cb411;
+}
+.container{
+    margin-left: 695px
+}
+.row{
+    margin-top: 40px
+}
