@@ -7,68 +7,26 @@
                 </li>
             </ul>
         </nav>
-        <div class="card" style="height: 1400px;">
-            <div class="card-body">
-                <div class="row" style="margin-left:10px">
-                    <div class="col-6">
-                        <img src="../assets/image/android.jpg" style="width:410px; height: 230px;">
-                        <p></p>
-                        <h5>Lập rình Android nâng cao</h5>
-                        <hr class="a">
-                        <a href="">Trắc nghiệm lập trình Android</a>
-                    </div>
-                    <div class="col-6">
-                        <img src="../assets/image/2.jpg" style="width:410px; height: 230px;">
-                        <p></p>
-                        <h5>Xây dựng web</h5>
-                        <hr class="b">
-                        <a href="">Trắc nghiệm Xây dựng web</a>
-                    </div>
-                </div>
-                <div class="row" style="margin-left:10px; margin-top: 20px">
-                    <div class="col-6">
-                        <img src="../assets/image/3.jpg" style="width:410px; height: 230px;">
-                        <p></p>
-                        <h5>Cơ sở dữ liệu</h5>
-                        <hr class="a">
-                        <a href="">Trắc nghiệm Cơ sở dữ liệu</a>
-                    </div>
-                    <div class="col-6">
-                        <img src="../assets/image/4.jpg" style="width:410px; height: 230px;">
-                        <p></p>
-                        <h5>SQL Server</h5>
-                        <hr class="b">
-                        <a href="">Trắc nghiệm SQL Server</a>
-                    </div>
-                </div>
-                <div class="row" style="margin-left:10px; margin-top: 20px">
-                    <div class="col-6">
-                        <img src="../assets/image/5.jpg" style="width:410px; height: 230px;">
-                        <p></p>
-                        <h5>Internet Marketing</h5>
-                        <hr class="a">
-                        <a href="">Trắc nghiệm Marketing</a>
-                    </div>
-                    <div class="col-6">
-                        <img src="../assets/image/6.jpg" style="width:410px; height: 230px;">
-                        <p></p>
-                        <h5>Lập trình hướng đối tượng Java</h5>
-                        <hr class="b">
-                        <a href="">Lập trình Java</a>
-                    </div>
-                </div>
-                <div class="row" style="margin-left:10px; margin-top: 20px">
-                    <div class="col-6">
-                        <img src="../assets/image/7.jpg" style="width:410px; height: 230px;">
-                        <p></p>
-                        <h5>Lập trình Game 3D</h5>
-                        <hr class="a">
-                        <a href="">Trắc nghiệm Game 3D</a>
-                    </div>
+    
+    <div class="row">
+        <div *ngFor="let subject of subjects | paginate : config" class="col-6">
 
+            <div class="card text-center">
+                <div class="card-header"><img src="../../assets/image/{{subject.Logo}}" alt="{{subject.Name}}"></div>
+                <div class="card-body">
+                    <strong>{{subject.Name}}</strong>
+                </div>
+                <div class="card-footer">
+                    <a routerLink="/monhoc/{{subject.Id}}" role="button">Click here</a>
                 </div>
             </div>
+
         </div>
+        <div class="w-100"></div>
+        <div class="mt-5 col-12 text-center">
+            <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+        </div>
+    </div>   
 
     </div>
     <div class="col-4">
@@ -111,9 +69,7 @@
         <div class="container" style="margin-top: 40px">
             <ul class="list-group">
                 <li class="list-group-item active"
-                    style="width: 400px; margin-left: 5px; margin-top: 10px; background-color: #78ad11!important;">Những
-                    Khóa Học
-                    Mới</li>
+                    style="width: 400px; margin-left: 5px; margin-top: 10px; background-color: #78ad11!important;">HÀNH TRÌNH KHỞI NGHIỆP</li>
                     <img src="../assets/image/khoinghiep.png" style="width: 400px; height:250px; margin-left:5px; margin-top:15px">
                 
             </ul>

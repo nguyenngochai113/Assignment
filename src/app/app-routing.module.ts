@@ -7,6 +7,7 @@ import { LienheComponent } from './lienhe/lienhe.component';
 import { DangnhapComponent } from './dangnhap/dangnhap.component';
 import { DangkyComponent } from './dangky/dangky.component';
 import { MonhocComponent } from './monhoc/monhoc.component';
+import { AndroidComponent } from './tracnghiem/android.component';
 
 
 
@@ -18,7 +19,9 @@ const routes: Routes = [
   {path:'lienhe', component: LienheComponent},
   {path:'dangnhap', component: DangnhapComponent},
   {path:'dangky', component:DangkyComponent},
-  {path: 'monhoc', component: MonhocComponent}
+  {path: 'monhoc', component: MonhocComponent},
+  {path: 'monhoc/:id', component: AndroidComponent},
+
 ]
 
 @NgModule({
