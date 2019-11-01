@@ -1,16 +1,19 @@
+<body>
+    <form>
+    <div class="to">
+        <div class="form">
+            <h2>Đăng ký học</h2>
 
-    <body>
-        <div class="to">
-            <div class="form">
-                <h2>Đăng ký học</h2>
-
-                <label style="margin-left: -150px;">Họ và tên</label>
+            
+                <label>Họ và tên</label>
                 <input type="text" name="hoten">
-                <label>Số điện thoại</label>
-                <input type="text" name="sdt">    
-                <label style="margin-left: -180px;">Email</label>
-                <input type="text" name="email"> 
-                <input id="submit" type="submit" name="submit" value="Gửi">
-            </div>                
+                <label>Mật Khẩu</label>
+                <input type="password" #userPassword name="sdt">
+                <label>Email</label>
+                <input type="email" #userName name="email">
+                <input id="submit" type="submit" (click)="authService.SignUp(userName.value , userPassword.value)" name="submit" value="Gửi">
+            
         </div>
-    </body>
+    </div>
+    </form>
+</body>

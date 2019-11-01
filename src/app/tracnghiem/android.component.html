@@ -1,4 +1,4 @@
-<div class="card text-center">
+<!-- <div class="card text-center">
     <div class="card-header">Test De may nhoc</div>
    
             <div class="card-body" *ngFor="let quiz of quiz | paginate : config">
@@ -31,4 +31,39 @@
                     <button class="btn" (click)="up()">Forward</button>
                 </div>
             </div>
-</div>
+</div> -->
+<!---->
+<div class="container">
+        <div class="card">
+          <div class="card-header"><h2 style="font-family: cursive; text-align: center; color:#78ad11!important; ;">Subject Test</h2></div>
+          <div class="card-body" *ngFor="let quiz of quiz | paginate : config">
+                <div class="funkyradio" style="text-align: center;">
+                    <strong>{{quiz.Text}}</strong>
+                    <div class="funkyradio-default">
+                        <input (change)="change(1 , config.currentPage - 1)" type="radio" name="quiz{{quiz.Id}}"
+                            id="radio{{quiz.Id}}" />
+                        <label for="radio{{quiz.Id}}">{{quiz.Answers[0].Text}}</label>
+                    </div>
+                    <div class="funkyradio-primary">
+                        <input (change)="change(2 , config.currentPage - 1)" type="radio" name="quiz{{quiz.Id}}"
+                            id="radio1{{quiz.Id}}" />
+                        <label for="radio1{{quiz.Id}}">{{quiz.Answers[1].Text}}</label>
+                    </div>
+                    <div class="funkyradio-success">
+                        <input (change)="change(3 , config.currentPage - 1)" type="radio" name="quiz{{quiz.Id}}"
+                            id="radio2{{quiz.Id}}" />
+                        <label for="radio2{{quiz.Id}}" *ngIf="quiz.Answers[2]">{{quiz.Answers[2].Text}}</label>
+                    </div>
+                    <div class="funkyradio-danger">
+                        <input (change)="change(4 , config.currentPage - 1)" type="radio" name="quiz{{quiz.Id}}"
+                            id="radio3{{quiz.Id}}" />
+                        <label for="radio3{{quiz.Id}}" *ngIf="quiz.Answers[3]">{{quiz.Answers[3].Text}}</label>
+                    </div>
+
+                </div> 
+                <div class="card-footer" style="text-align: center;">
+                        <button class="btn" (click)="back()"><b>Back</b></button>
+                        <button class="btn" (click)="up()"><b>Forward</b></button>
+                    </div>
+        </div>
+      </div>

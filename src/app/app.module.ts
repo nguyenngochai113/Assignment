@@ -13,8 +13,16 @@ import { MonhocComponent } from './monhoc/monhoc.component';
 import { AndroidComponent } from './tracnghiem/android.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CountdownModule } from 'ngx-countdown';
-
-
+import { environment } from '../environments/environment';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { QuenmatkhauComponent } from './quenmatkhau/quenmatkhau.component';
+import { TaikhoangComponent } from './taikhoang/taikhoang.component';
+import { XacnhanemailComponent } from './xacnhanemail/xacnhanemail.component';
+import { AuthService } from './service/auth.service';
+import { FormsModule , ReactiveFormsModule } from '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -27,6 +35,9 @@ import { CountdownModule } from 'ngx-countdown';
     DangkyComponent,
     MonhocComponent,
     AndroidComponent,
+    QuenmatkhauComponent,
+    TaikhoangComponent,
+    XacnhanemailComponent
 
 
 
@@ -36,9 +47,15 @@ import { CountdownModule } from 'ngx-countdown';
     AppRoutingModule,
     HttpClientModule,
     NgxPaginationModule,
-    CountdownModule
+    CountdownModule,
+    ReactiveFormsModule,
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule, // imports firebase/firestore, only needed for database features
+    AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
+    AngularFireStorageModule // imports firebase/storage only needed for storage features
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
