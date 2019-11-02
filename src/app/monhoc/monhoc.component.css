@@ -17,3 +17,24 @@
 .b{
     border-bottom: 1px solid #aaa;
 }
+#menu {
+    background: #78ad11;
+    height: 44px;
+    width: 100%;
+    margin-top: 21px;
+    clear: both;
+
+}
+.menu_item_title {
+    padding: 0 10px;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: HKNova;
+    width: 100%;
+    line-height: 34px;
+    margin-top: 5px;
+}
+.menu_item {
+    float: left;
+    text-align: center;
+}
