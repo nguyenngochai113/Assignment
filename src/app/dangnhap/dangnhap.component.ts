@@ -12,7 +12,7 @@ export class DangnhapComponent implements OnInit {
   constructor(
   
     private title: Title,
-    private authservice: AuthService,
+    public authservice: AuthService,
   ) {
     this.title.setTitle('login')
    }

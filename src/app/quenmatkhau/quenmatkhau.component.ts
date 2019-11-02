@@ -7,7 +7,7 @@ import { AuthService } from '../service/auth.service'
 })
 export class QuenmatkhauComponent implements OnInit {
 
-  constructor(private authService : AuthService) { }
+  constructor(public authService : AuthService) { }
 
   ngOnInit() {
   }
