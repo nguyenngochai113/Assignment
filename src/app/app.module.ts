@@ -22,7 +22,7 @@ import { QuenmatkhauComponent } from './quenmatkhau/quenmatkhau.component';
 import { TaikhoangComponent } from './taikhoang/taikhoang.component';
 import { XacnhanemailComponent } from './xacnhanemail/xacnhanemail.component';
 import { AuthService } from './service/auth.service';
-import { FormsModule , ReactiveFormsModule } from '@angular/forms'
+import { FormsModule , ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -37,7 +37,8 @@ import { FormsModule , ReactiveFormsModule } from '@angular/forms'
     AndroidComponent,
     QuenmatkhauComponent,
     TaikhoangComponent,
-    XacnhanemailComponent
+    XacnhanemailComponent,
+  
 
 
 

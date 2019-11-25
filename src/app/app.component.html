@@ -18,8 +18,8 @@
       <li class="nav-item f">
         <a class="nav-link" routerLink="/monhoc">Môn Học</a>
       </li>
-      <button type="button" routerLink="/dangnhap" class="btn btn-secondary" style="border-radius: 20px; margin-left: 500px; background-color: orange">Đăng Nhập</button>
-      <button type="button" routerLink="/dangky" class="btn btn-secondary" style="border-radius: 20px; margin-left: 15px; background-color: orange">Đăng Ký</button>
+      <button *ngIf="!isLoggedin" type="button" routerLink="/dangnhap" class="btn btn-secondary" style="border-radius: 20px; margin-left: 500px; background-color: orange">Đăng Nhập</button>
+      <button  type="button" routerLink="/dangky" class="btn btn-secondary" style="border-radius: 20px; margin-left: 15px; background-color: orange">Đăng Ký</button>
     </ul>
   </nav>
 

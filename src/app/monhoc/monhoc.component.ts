@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../service/data.service';
+import { Router } from '@angular/router';
 import { map } from 'rxjs/operators'
 @Component({
   selector: 'app-monhoc',
@@ -9,7 +10,14 @@ import { map } from 'rxjs/operators'
 export class MonhocComponent implements OnInit {
   subjects;
   config;
-  constructor(private service : DataService) { }
+  isLoggedin
+  constructor(private service : DataService, route: Router) { 
+    const user = localStorage.getItem('user');
+    this.isLoggedin = (!user || user == 'null') ? false:true;
+    if (!this.isLoggedin) {
+      route.navigate(['/dangnhap']);
+    }
+  }
 
   ngOnInit() {
     this.service.getsubject().subscribe(subject => {

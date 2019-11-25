@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DataService } from '../service/data.service';
-
+import { Router } from '@angular/router' ;
+import { map } from 'rxjs/operators';
+import {quiz} from '../model/quiz';
+import { Identifiers } from '@angular/compiler';
 
 @Component({
   selector: 'app-android',
@@ -10,23 +13,26 @@ import { DataService } from '../service/data.service';
 })
 export class AndroidComponent implements OnInit {
   quiz;
-  config;
+  config;  
+  public id;
   c;
   constructor(private service : DataService , private route : ActivatedRoute) { 
     
   }
   
-  listChoose = []
-  change(choose , index) {
-    this.listChoose[index] = choose;
-    console.log(choose);
-    
+  listChoose = [];
+  change(choose, index) {
+    this.listChoose[index] = choose
+   
+
   }
   ngOnInit() {
   this.route.paramMap.subscribe(params => {
-    const id = params.get('id');
-    this.service.getquiz(id).subscribe(quiz => {
-      this.quiz = quiz;
+    this.id = params.get('id')
+    this.service.getquiz(this.id).pipe(
+      map(quiz => this.quiz = quiz)
+       ).subscribe(quiz => {
+        this.config.totalItems
     })
   })
   this.config = {
@@ -34,11 +40,30 @@ export class AndroidComponent implements OnInit {
     currentPage: 1,
     totalItems: 0
   }
+  
+  }
+  onSubmit() {
+    let mark =0;
+    for(var i = 0; i < this.listChoose.length; i++) {
+      if(this.quiz[i].Answers[this.listChoose[i] -1].Id === this.quiz[i].AnswerId) {
+        mark++;
+      }
+    }
+    localStorage.setItem('mark' , mark.toString())
+    
+    
+    
   }
   up() {
-    this.config.currentPage ++;
+    this.config.currentPage++;
   }
-  back() {
+  down() {
     this.config.currentPage--;
+  }
+  firstpage() {
+    this.config.currentPage = 1
+  }
+  lastpage() {
+    this.config.currentPage = this.config.totalItems;
   }
 }

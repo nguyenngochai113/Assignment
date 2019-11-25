@@ -16,7 +16,6 @@ export class DangnhapComponent implements OnInit {
   ) {
     this.title.setTitle('login')
    }
-  
 
   ngOnInit() {
   }
