@@ -16,7 +16,7 @@ export class AndroidComponent implements OnInit {
   config;  
   public id;
   c;
-  constructor(private service : DataService , private route : ActivatedRoute) { 
+  constructor(private service : DataService , private route : ActivatedRoute, private router : Router) { 
     
   }
   
@@ -32,7 +32,7 @@ export class AndroidComponent implements OnInit {
     this.service.getquiz(this.id).pipe(
       map(quiz => this.quiz = quiz)
        ).subscribe(quiz => {
-        this.config.totalItems
+        this.config.totalItems = quiz.length
     })
   })
   this.config = {
@@ -44,12 +44,17 @@ export class AndroidComponent implements OnInit {
   }
   onSubmit() {
     let mark =0;
+    let diem = 0;
     for(var i = 0; i < this.listChoose.length; i++) {
       if(this.quiz[i].Answers[this.listChoose[i] -1].Id === this.quiz[i].AnswerId) {
         mark++;
       }
     }
-    localStorage.setItem('mark' , mark.toString())
+    alert("Chúc mừng bạn đã hoàn thành bài thi")
+    mark = parseFloat((mark / this.config.totalItems).toFixed(2));
+    localStorage.setItem('mark' , diem.toString())
+    localStorage.setItem('cau' , mark.toString())
+    this.router.navigate(['ketqua'])
     
     
     

@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
+import { Observable } from 'rxjs';
+import {quiz} from '../model/quiz';
 @Injectable({
   providedIn: 'root'
 })
@@ -10,7 +12,8 @@ export class DataService {
   getsubject() {
     return this.http.get('../../assets/data/Subjects.json');
   }
-  getquiz(id) {
-    return this.http.get(`../../assets/data/${id}.json`);
+  getquiz(id) : Observable<quiz[]>{
+    return this.http.get<quiz[]>(`../../assets/data/${id}.json`);
   }
+
 }
